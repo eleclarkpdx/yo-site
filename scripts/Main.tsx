@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
+import * as usehooks from "usehooks-ts";
 
 const MainContainer = (props: any) => {
     return (
@@ -31,7 +32,7 @@ const FilterContainer = (props: any) => {
 
 const SearchBar = (props: any) => {
     return (
-        <div className="filter-container">
+        <div className="search-bar">
 
         </div>
     )
@@ -40,6 +41,14 @@ const SearchBar = (props: any) => {
 const FilterBar = (props: any) => {
     return (
         <div className="filter-bar">
+
+        </div>
+    )
+}
+
+const FilterButton = (props: any) => {
+    return (
+        <div className="filter-button">
 
         </div>
     )
@@ -65,7 +74,6 @@ const ShopItem = (props: any) => {
 const ShopBanner = (props: any) => {
     return (
         <div className="shop-banner">
-
         </div>
     )
 }
@@ -73,6 +81,14 @@ const ShopBanner = (props: any) => {
 const AboutContainer = (props: any) => {
     return (
         <div className="about-container">
+
+        </div>
+    )
+}
+
+const AboutFooter = (props: any) => {
+    return (
+        <div className="about-footer">
 
         </div>
     )
