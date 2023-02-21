@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'Chelsea Market';
+    src: url('fonts/ChelseaMarket-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Solway';
+    src: url('fonts/Solway.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Solway';
+    src: url('fonts/Solway-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Solway';
+    src: url('fonts/Solway-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Solway';
+    background-color: white;
+}
+
+.main-container {
+    background-color: rgb(50,50,50);
+}
+
+.shop-container {
+    background-color: rgb(70,70,70);
+}
+
+.filter-container {
+    background-color: rgb(90,90,90);
+}
+
+.search-bar {
+    background-color: rgb(110,110,110);
+}
+
+.filter-bar {
+    background-color: rgb(110,110,110);
+}
+
+.filter-button {
+    background-color: rgb(130,130,130);
+}
+
+.shop-items-container {
+    background-color: rgb(90,90,90);
+}
+
+.shop-item {
+    background-color: rgb(110,110,110);
+}
+
+.shop-banner {
+    background-color: rgb(90,90,90);
+}
+
+.about-container {
+    background-color: rgb(70,70,70);
+}
+
+.about-footer {
+    background-color: rgb(70,70,70);
+}
