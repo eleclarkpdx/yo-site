@@ -1,0 +1,11 @@
+{
+  "name": "yo-site",
+  "version": "0.0.1",
+  "description": "A website for Yo to sell her wares.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eleanore Clark",
+  "license": "All rights reserved"
+}
