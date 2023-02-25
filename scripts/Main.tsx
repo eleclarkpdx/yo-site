@@ -12,9 +12,7 @@ const MainContainer = (props: any) => {
 
     return (
         <div ref={mainContainer} className="main-container">
-            <ShopBanner />
             {aboutIsVisible && <AboutContainer />}
-            <FilterContainer />
             <ShopContainer />
             {footerIsVisible && <Footer />}
         </div>
@@ -24,7 +22,9 @@ const MainContainer = (props: any) => {
 const ShopContainer = (props: any) => {
     return (
         <div className="shop-container">
+            <ShopBanner />
             <ShopItemsContainer />
+            <FilterContainer />
         </div>
     )
 }
