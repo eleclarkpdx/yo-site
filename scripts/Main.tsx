@@ -1,12 +1,22 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import * as usehooks from "usehooks-ts";
+import {useElementSize} from "usehooks-ts";
+
+const desktopWidth: number = 1280;
+const tabletWidth: number = 600;
 
 const MainContainer = (props: any) => {
+    const [mainContainer, {width, height}] = useElementSize();
+    const aboutIsVisible: boolean = (width >= desktopWidth) ? true : false;
+    const footerIsVisible: boolean = (width < desktopWidth) ? true : false;
+
     return (
-        <div className="main-container">
+        <div ref={mainContainer} className="main-container">
+            <ShopBanner />
+            {aboutIsVisible && <AboutContainer />}
+            <FilterContainer />
             <ShopContainer />
-            <AboutContainer />
+            {footerIsVisible && <Footer />}
         </div>
     )
 }
@@ -14,8 +24,6 @@ const MainContainer = (props: any) => {
 const ShopContainer = (props: any) => {
     return (
         <div className="shop-container">
-            <ShopBanner />
-            <FilterContainer />
             <ShopItemsContainer />
         </div>
     )
@@ -59,6 +67,16 @@ const ShopItemsContainer = (props: any) => {
         <div className="shop-items-container">
             <ShopItem />
             <ShopItem />
+            <ShopItem />
+            <ShopItem />
+            <ShopItem />
+            <ShopItem />
+            <ShopItem />
+            <ShopItem />
+            <ShopItem />
+            <ShopItem />
+            <ShopItem />
+            <ShopItem />
         </div>
     )
 }
@@ -74,6 +92,7 @@ const ShopItem = (props: any) => {
 const ShopBanner = (props: any) => {
     return (
         <div className="shop-banner">
+            <h1>The Arts of Yo-Yo</h1>
         </div>
     )
 }
@@ -86,9 +105,9 @@ const AboutContainer = (props: any) => {
     )
 }
 
-const AboutFooter = (props: any) => {
+const Footer = (props: any) => {
     return (
-        <div className="about-footer">
+        <div className="footer">
 
         </div>
     )
