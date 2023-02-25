@@ -34,6 +34,10 @@
     font-style: normal;
 }
 
+$largeDesktopWidth: 1800px;
+$desktopWidth: 1280px;
+$tabletWidth: 600px;
+
 * {
     box-sizing: border-box;
 }
@@ -70,7 +74,7 @@ body {
     background-color: rgb(70,70,70);
 
     position: fixed;
-    width: 75vw;
+    width: 100vw;
     height: 100%;
     margin: auto;
 }
@@ -105,7 +109,6 @@ body {
     position: absolute;
     right: 0;
     height: 83.5vh;
-    width: 58.5vw;
 
     display: inline-flex;
     flex-wrap: wrap;
@@ -117,8 +120,8 @@ body {
 .shop-item {
     background-color: rgb(110,110,110);
 
-    width: 200px;
-    height: 300px;
+    width: 130px;
+    height: fit-content;
     margin: 20px;
 
     flex-shrink: 0;
@@ -126,4 +129,61 @@ body {
 
 .about-footer {
     background-color: rgb(70,70,70);
+}
+
+.placeholder-img {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+    background-color: rgb(180, 180, 180);
+}
+
+@media only screen and (min-width: $tabletWidth) {
+    .shop-container {
+        width: 100vw;
+    }
+    .shop-items-container {
+        width: 75vw;
+    }
+    .filter-container {
+        width: 25vw;
+    }
+
+    .shop-item {
+        width: 170px;
+    }
+    .placeholder-img {
+        width: 155px;
+        height: 155px;
+    }
+}
+
+@media only screen and (min-width: $desktopWidth) {
+    .shop-container {
+        width: 75vw;
+    }
+    .shop-items-container {
+        width: 58.5vw;
+    }
+    .filter-container {
+        width: 16.5vw;
+    }
+
+    .shop-item {
+        width: 210px;
+    }
+    .placeholder-img {
+        width: 190px;
+        height: 190px;
+    }
+}
+
+@media only screen and (min-width: $largeDesktopWidth) {
+    .shop-item {
+        width: 300px;
+    }
+    .placeholder-img {
+        width: 280px;
+        height: 280px;
+    }
 }

@@ -20,11 +20,13 @@ const MainContainer = (props: any) => {
 }
 
 const ShopContainer = (props: any) => {
+    const [shopContainer, {width, height}] = useElementSize();
+    const filterIsVisible: boolean = (width >= tabletWidth) ? true : false;
     return (
-        <div className="shop-container">
+        <div ref={shopContainer} className="shop-container">
             <ShopBanner />
             <ShopItemsContainer />
-            <FilterContainer />
+            {filterIsVisible && <FilterContainer />}
         </div>
     )
 }
@@ -84,7 +86,9 @@ const ShopItemsContainer = (props: any) => {
 const ShopItem = (props: any) => {
     return (
         <div className="shop-item">
-
+            <div className="placeholder-img"></div>
+            <h4>Product name</h4>
+            <p>$49.95</p>
         </div>
     )
 }
