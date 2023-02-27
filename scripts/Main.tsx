@@ -87,7 +87,7 @@ const ShopItem = (props: any) => {
     return (
         <div className="shop-item">
             <div className="placeholder-img"></div>
-            <h4>Product name</h4>
+            <h3>Product name</h3>
             <p>$49.95</p>
         </div>
     )
@@ -104,7 +104,12 @@ const ShopBanner = (props: any) => {
 const AboutContainer = (props: any) => {
     return (
         <div className="about-container">
-
+            <div>
+                <img className="yo-portrait"></img>
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. SSaepe, optio dolorum! Totam minima Saepe, optio dolorum! Totam minima Sconsectetur adipisicing elit. SSaepe, optio dolorum! aepe, optio dolorum! Totam minima Saepe, optio dolorum! Totam minima Saepe, optio dolorum! Totam minconsectetur adipisicing elit. SSaepe, optio dolorum! ima Saepe, optio dolorum! Totam minima aepe, optio dolorum! Totam minima voluptatibus, magnam libero amet omnis excepturi animi id officiis natus. Necessitatibus ratione libero quae ipsam quibusdam perspiciatis.</div>
+                <button className="button">Contact Me!</button>
+                <button className="button">Share My Store!</button>
+            </div>
         </div>
     )
 }
@@ -112,7 +117,9 @@ const AboutContainer = (props: any) => {
 const Footer = (props: any) => {
     return (
         <div className="footer">
-
+            <button className="button">About</button>
+            <button className="button">Contact</button>
+            <button className="button">Share</button>
         </div>
     )
 }
