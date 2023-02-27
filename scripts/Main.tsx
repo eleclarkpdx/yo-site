@@ -42,8 +42,11 @@ const FilterContainer = (props: any) => {
 
 const SearchBar = (props: any) => {
     return (
-        <div className="search-bar">
-
+        <div className="search-container">
+            <div className="search-bar">
+                <input id="search-input" placeholder="Search"></input>
+                <button>☌</button>
+            </div>
         </div>
     )
 }
@@ -51,7 +54,22 @@ const SearchBar = (props: any) => {
 const FilterBar = (props: any) => {
     return (
         <div className="filter-bar">
+            <FilterItem />
+            <FilterItem />
+            <FilterItem />
+            <FilterItem />
+            <FilterItem />
+            <FilterItem />
+            <FilterItem />
+            <FilterItem />
+        </div>
+    )
+}
 
+const FilterItem = (props: any) => {
+    return (
+        <div className="filter-item">
+            Item
         </div>
     )
 }
