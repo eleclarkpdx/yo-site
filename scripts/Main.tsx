@@ -104,7 +104,7 @@ const ShopItemsContainer = (props: any) => {
 const ShopItem = (props: any) => {
     return (
         <div className="shop-item">
-            <div className="placeholder-img"></div>
+            <img className="placeholder-img" src="http://placekitten.com/400/400"></img>
             <h3>Product name</h3>
             <p>$49.95</p>
         </div>
@@ -122,9 +122,9 @@ const ShopBanner = (props: any) => {
 const AboutContainer = (props: any) => {
     return (
         <div className="about-container">
-            <div>
-                <img className="yo-portrait"></img>
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. SSaepe, optio dolorum! Totam minima Saepe, optio dolorum! Totam minima Sconsectetur adipisicing elit. SSaepe, optio dolorum! aepe, optio dolorum! Totam minima Saepe, optio dolorum! Totam minima Saepe, optio dolorum! Totam minconsectetur adipisicing elit. SSaepe, optio dolorum! ima Saepe, optio dolorum! Totam minima aepe, optio dolorum! Totam minima voluptatibus, magnam libero amet omnis excepturi animi id officiis natus. Necessitatibus ratione libero quae ipsam quibusdam perspiciatis.</div>
+            <div className="about">
+                <img className="yo-portrait" src="http://placekitten.com/200/200"></img>
+                <div>Lorem ipsum dolor sit amet consectetur adipisicing SSaepe, optio dolorum! aepe, optio dolorum! Totam minima Saepe, optio dolorum! Totam minima Saepe, optio dolorum! Totam minconsectetur adipisicing elit. SSaepe, optio dolorum! ima Saepe, optio dolorum! Totam minima aepe, optio dolorum! Totam minima voluptatibus, magnam libero amet omnis excepturi animi id officiis natus. Necessitatibus ratione libero quae ipsam quibusdam perspiciatis.</div>
                 <button className="button">Contact Me!</button>
                 <button className="button">Share My Store!</button>
             </div>

@@ -77,6 +77,9 @@ $xtraDarkGreen: rgb(101,129,9);
 $xxtraDarkGreen: rgb(57,74,0);
 $xtraDarkSepia: rgb(125,71,21);
 
+$slightlyRounded: 8px;
+$rounded: 16px;
+
 @mixin interactable {
     min-height: 40px;
     border: solid 2px $darkSepia;
@@ -84,10 +87,10 @@ $xtraDarkSepia: rgb(125,71,21);
 }
 
 @mixin hovers {
-    /*
+    padding: 4px;
+    border-radius: $slightlyRounded;
     transition-property: background-color;
     transition-duration: 100ms;
-    */
 }
 
 @mixin lightHovers {
@@ -114,14 +117,21 @@ $xtraDarkSepia: rgb(125,71,21);
 button {
     @include interactable;
     @include darkHovers;
+
     padding: 10px 0;
     background-color: $sepia;
     font: 500 $biggerText 'Solway';
     color: $xtraDarkSepia;
+    border-radius: $rounded;
 }
 
 input {
     color: $xtraDarkSepia;
+}
+
+img {
+    border: none;
+    border-radius: $slightlyRounded;
 }
 
 body {
@@ -157,18 +167,29 @@ body {
     right: 0;
     width: 25%;
     height: 100%;
-    padding: 6%;
+    padding: 2% 6%;
 
     text-align: justify;
     line-height: 170%;
     color: $xtraDarkGreen;
+}
+
+.about {
+    vertical-align: middle;
 
     button {
         display: block;
         margin: 20px auto;
         width: 100%;
     }
+
+    img {
+        display: block;
+        margin: auto auto 10px auto;
+    }
 }
+
+
 
 .shop-container {
     position: fixed;
@@ -280,8 +301,8 @@ body {
 }
 
 .placeholder-img {
-    width: 120px;
-    height: 120px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     margin: auto;
     background-color: $lightSepia;
 }
@@ -303,8 +324,6 @@ body {
         width: $productWidthTablet;
     }
     .placeholder-img {
-        width: $productWidthTablet;
-        height: $productWidthTablet;
     }
 }
 
@@ -326,8 +345,6 @@ body {
         width: $productWidthDesktop;
     }
     .placeholder-img {
-        width: $productWidthDesktop;
-        height: $productWidthDesktop;
     }
 }
 
@@ -336,7 +353,5 @@ body {
         width: $productWidthLargeDesktop;
     }
     .placeholder-img {
-        width: $productWidthLargeDesktop;
-        height: $productWidthLargeDesktop;
     }
 }
