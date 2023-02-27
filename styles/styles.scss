@@ -44,8 +44,13 @@ $productWidthLargeDesktop: 300px;
 
 $smallText: .9em;
 $text: 1em;
-$bigText: 1.2em;
-$biggerText: 1.4em;
+$bigText: 1.1em;
+$biggerText: 1.2em;
+
+$smallTitle: 2.2em;
+$title: 2.6em;
+$bigTitle: 3em;
+$biggestTitle: 3.4em;
 
 
 $lightestMauve: rgb(255, 237, 232);
@@ -63,32 +68,65 @@ $darkest: rgb(, , );
 $lightSepia: rgb(255, 240, 212);
 $sepia: rgb(255, 233, 189);
 $darkSepia: rgb(255, 223, 163);
-$darkestSepia: rgb(201, 167, 99);
+$darkestSepia: rgb(232, 189, 130);
 $lightestYellow: rgb(255, 252, 232);
 $lightGreen: rgb(239, 249, 208);
 $darkestGreen: rgb(189,215 ,112 );
 
 $xtraDarkGreen: rgb(101,129,9);
 $xxtraDarkGreen: rgb(57,74,0);
-$xtraDarkSepia: rgb(125,90,21);
+$xtraDarkSepia: rgb(125,71,21);
+
+@mixin interactable {
+    min-height: 40px;
+    border: solid 2px $darkSepia;
+    border-radius: 15px;
+}
+
+@mixin hovers {
+    /*
+    transition-property: background-color;
+    transition-duration: 100ms;
+    */
+}
+
+@mixin lightHovers {
+    @include hovers;
+    &:hover {
+        background-color: $lightSepia;
+    }
+}
+
+@mixin darkHovers {
+    @include hovers;
+    &:hover {
+        border-color: $darkestSepia;
+        background-color: $darkestSepia;
+    }
+}
 
 * {
     box-sizing: border-box;
+    font-family: 'Solway';
+    font-size: $text;
 }
 
 button {
+    @include interactable;
+    @include darkHovers;
     padding: 10px 0;
     background-color: $sepia;
-    font: 500 $bigText 'Solway';
+    font: 500 $biggerText 'Solway';
     color: $xtraDarkSepia;
-    border: solid 2px $darkSepia;
-    border-radius: 15px;
+}
+
+input {
+    color: $xtraDarkSepia;
 }
 
 body {
     margin: 0px;
     background-color: $lightestYellow;
-    font-family: 'Solway';
     color: $xtraDarkSepia;
 }
 
@@ -106,8 +144,10 @@ body {
     align-items: center;
     justify-content: center;
 
-    font: large 'Chelsea Market';
-    color: $xxtraDarkGreen;
+    h1 {
+        font: $smallTitle 'Chelsea Market';
+        color: $xxtraDarkGreen;
+    }
 }
 
 .about-container {
@@ -147,12 +187,50 @@ body {
     flex-direction: column;
 }
 
+.search-container {
+    margin: 10px;
+    margin-bottom: 0;
+}
+
 .search-bar {
-    height: 10%;
+    width: 100%;
+
+    button {
+        @include interactable;
+        position: relative;
+        right: 0;
+        height: 40px;
+        width: 20%;
+        vertical-align: top;
+
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    input {
+        @include interactable;
+        position: relative;
+        left: 0;
+        height: 40px;
+        width: 80%;
+        padding: 10px;
+        vertical-align: top;
+
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
 }
 
 .filter-bar {
-    height:90%;
+    margin: 10px;
+    margin-top: 0;
+    padding: 10px;
+}
+
+.filter-item {
+    @include lightHovers;
+    margin: 6px;
+    font-size: $bigText;
 }
 
 .filter-button {
@@ -172,6 +250,7 @@ body {
 }
 
 .shop-item {
+    @include lightHovers;
     width: 130px;
     height: fit-content;
     margin: 20px;
@@ -180,7 +259,7 @@ body {
 
     h3 {
         font-weight: 500;
-        font-size: $bigText;
+        font-size: $biggerText;
     }
 }
 
@@ -217,8 +296,8 @@ body {
     .filter-container {
         width: 25vw;
     }
-    .shop-banner {
-        font-size: x-large;
+    .shop-banner h1 {
+        font-size: $title;
     }
     .shop-item {
         width: $productWidthTablet;
@@ -239,8 +318,8 @@ body {
     .filter-container {
         width: 16.5vw;
     }
-    .shop-banner {
-        font-size: xx-large;
+    .shop-banner h1 {
+        font-size: $bigTitle;
     }
 
     .shop-item {
