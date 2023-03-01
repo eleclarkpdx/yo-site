@@ -5,6 +5,7 @@ import {
     createBrowserRouter,
     RouterProvider,
     Route,
+    HashRouter,
     Link,
 } from "react-router-dom";
 import AboutPage from "./About";
@@ -176,6 +177,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <RouterProvider router={Router} />
+        <HashRouter>
+                <RouterProvider router={Router} />
+        </HashRouter>
     </React.StrictMode>
 );
