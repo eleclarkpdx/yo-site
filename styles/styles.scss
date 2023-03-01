@@ -76,6 +76,11 @@ $xtraDarkSepia: rgb(125,71,21);
 $slightlyRounded: 8px;
 $rounded: 16px;
 
+@mixin fullCoverage {
+    width: 100vw;
+    height: 100vh;
+}
+
 @mixin interactable {
     min-height: 40px;
     border: solid 2px $darkSepia;
@@ -121,7 +126,7 @@ button {
     @include interactable;
     @include darkHovers;
 
-    padding: 10px 0;
+    padding: 10px 0px;
     background-color: $sepia;
     font: 500 $biggerText 'Solway';
     color: $xtraDarkSepia;
@@ -150,8 +155,7 @@ body {
 }
 
 .main-container {
-    min-width: 100vw;
-    min-height: 100vh;
+    @include fullCoverage;
 }
 
 .shop-banner {
@@ -325,7 +329,33 @@ body {
     background-color: $lightSepia;
 }
 
+#about-background {
+    @include fullCoverage;
+    background-image: url("https://images.unsplash.com/photo-1562643439-cb8edf38f86b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1984&q=80");
+}
+
+#contact-background {
+    @include fullCoverage;
+    background-image: url("https://images.unsplash.com/photo-1654259089953-8d9f20344f29?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+}
+
+.simple-info-box {
+    width: 40%;
+    min-width: 200px;
+    height: fit-content;
+    padding: 20px;
+    margin: 40px;
+    position: absolute;
+    float: left;
+    border-radius: $rounded;
+    background-color: $lightestYellow;
+}
+
 @media only screen and (min-width: $tabletWidth) {
+    button {
+        padding: 10px;
+    }
+
     .shop-container {
         width: 100vw;
     }
