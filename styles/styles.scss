@@ -113,7 +113,6 @@ $rounded: 16px;
 * {
     box-sizing: border-box;
     font-family: 'Solway';
-    font-size: $text;
     scrollbar-color: $darkSepia $lightSepia;
 
     &::-webkit-scrollbar-thumb {
@@ -148,6 +147,12 @@ body {
     margin: 0px;
     background-color: $lightestYellow;
     color: $xtraDarkSepia;
+}
+
+.router-link {
+    &:link {
+        text-decoration: none;
+    }
 }
 
 .main-container {
@@ -307,6 +312,15 @@ body {
     button {
         width: 25%;
         max-width: 240px;
+    }
+
+    /* This nasty nesting is a reflection of React-Router.*/
+    .router-link {
+        width: 25%;
+        button {
+            width: 100%;
+            max-width: 240px;
+        }
     }
 }
 
