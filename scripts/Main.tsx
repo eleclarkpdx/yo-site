@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import {useElementSize} from "usehooks-ts";
+import {
+    createBrowserRouter,
+    RouterProvider,
+    Route,
+    Link,
+} from "react-router-dom";
+import AboutPage from "./About";
+import ContactPage from "./Contact";
 
 const desktopWidth: number = 1280;
 const tabletWidth: number = 600;
 
-const MainContainer = (props: any) => {
+const MainPage = (props: any) => {
     const [mainContainer, {width, height}] = useElementSize();
     const aboutIsVisible: boolean = (width >= desktopWidth) ? true : false;
     const footerIsVisible: boolean = (width < desktopWidth) ? true : false;
@@ -77,7 +85,6 @@ const FilterItem = (props: any) => {
 const FilterButton = (props: any) => {
     return (
         <div className="filter-button">
-
         </div>
     )
 }
@@ -124,8 +131,10 @@ const AboutContainer = (props: any) => {
         <div className="about-container">
             <div className="about">
                 <img className="yo-portrait" src="http://placekitten.com/200/200"></img>
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing SSaepe, optio dolorum! aepe, optio dolorum! Totam minima Saepe, optio dolorum! Totam minima Saepe, optio dolorum! Totam minconsectetur adipisicing elit. SSaepe, optio dolorum! ima Saepe, optio dolorum! Totam minima aepe, optio dolorum! Totam minima voluptatibus, magnam libero amet omnis excepturi animi id officiis natus. Necessitatibus ratione libero quae ipsam quibusdam perspiciatis.</div>
-                <button className="button">Contact Me!</button>
+                <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur veritatis sint ab repellat omnis temporibus expedita culpa non asperiores, consectetur officiis quos inventore qui officia quae alias esse repellendus tempora?</div>
+                <Link to="contact" className="router-link">
+                    <button className="button">Contact Me!</button>
+                </Link>
                 <button className="button">Share My Store!</button>
             </div>
         </div>
@@ -135,12 +144,31 @@ const AboutContainer = (props: any) => {
 const Footer = (props: any) => {
     return (
         <div className="footer">
-            <button className="button">About</button>
-            <button className="button">Contact</button>
+            <Link to="about" className="router-link">
+                <button className="button">About</button>
+            </Link>
+            <Link to="contact" className="router-link">
+                <button className="button">Contact</button>
+            </Link>
             <button className="button">Share</button>
         </div>
     )
 }
+
+const Router = createBrowserRouter([
+    {
+        path: "/",
+        element: <MainPage />
+    },
+    {
+        path: "/about",
+        element: <AboutPage />
+    },
+    {
+        path: "/contact",
+        element: <ContactPage />
+    }
+])
 
 
 const root = ReactDOM.createRoot(
@@ -148,6 +176,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <MainContainer />
+        <RouterProvider router={Router} />
     </React.StrictMode>
 );
