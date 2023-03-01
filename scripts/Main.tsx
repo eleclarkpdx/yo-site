@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import {useElementSize} from "usehooks-ts";
 import {
-    createBrowserRouter,
+    createHashRouter,
     RouterProvider,
     Route,
     HashRouter,
@@ -156,7 +156,7 @@ const Footer = (props: any) => {
     )
 }
 
-const Router = createBrowserRouter([
+const Router = createHashRouter([
     {
         path: "/",
         element: <MainPage />
@@ -177,8 +177,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
     <React.StrictMode>
-        <HashRouter>
-                <RouterProvider router={Router} />
-        </HashRouter>
+        <RouterProvider router={Router} />
     </React.StrictMode>
 );
