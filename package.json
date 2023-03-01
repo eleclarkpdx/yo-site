@@ -2,9 +2,13 @@
   "name": "yo-site",
   "version": "0.0.1",
   "description": "A website for Yo to sell her wares.",
+  "homepage": "https://eleclarkpdx.github.io/yo-site/",
   "main": "index.html",
   "scripts": {
-    "start": "vite"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "start": "vite",
+    "build": "vite build"
   },
   "author": "Eleanore Clark",
   "license": "All rights reserved",
@@ -15,6 +19,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "usehooks-ts": "^2.9.1",
-    "vite": "^4.1.4"
+    "vite": "^4.1.4",
+    "yarn": "^1.22.19"
+  },
+  "devDependencies": {
+    "gh-pages": "^5.0.0"
   }
 }
