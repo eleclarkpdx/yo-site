@@ -28,22 +28,22 @@
 }
 
 @font-face {
-    font-family: 'Solway';
-    src: url('fonts/Solway-Regular.ttf') format('truetype');
+    font-family: 'ZillaSlab';
+    src: url('fonts/ZillaSlab-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Solway';
-    src: url('fonts/Solway-Light.ttf') format('truetype');
+    font-family: 'ZillaSlab';
+    src: url('fonts/ZillaSlab-Light.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Solway';
-    src: url('fonts/Solway-Medium.ttf') format('truetype');
+    font-family: 'ZillaSlab';
+    src: url('fonts/ZillaSlab-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
@@ -56,10 +56,10 @@ $productWidthTablet: 170px;
 $productWidthDesktop: 210px;
 $productWidthLargeDesktop: 300px;
 
-$smallText: .9em;
-$text: 1em;
-$bigText: 1.1em;
-$biggerText: 1.2em;
+$smallText: 1em;
+$text: 1.1em;
+$bigText: 1.2em;
+$biggerText: 1.3em;
 
 /*
 $smallTitle: 1.5em;
@@ -67,7 +67,7 @@ $title: 2em;
 $bigTitle: 2.9em;
 $biggestTitle: 3.2em;
 */
-$smallTitle: 2em;
+$smallTitle: 1.8em;
 $title: 2.8em;
 $bigTitle: 3.4em;
 $biggestTitle: 3.8em;
@@ -83,7 +83,7 @@ $lightSepia: rgb(255, 240, 212);
 $sepia: rgb(255, 233, 189);
 $darkSepia: rgb(255, 223, 163);
 $darkestSepia: rgb(232, 189, 130);
-$lightestYellow: rgb(255, 252, 232);
+$lightestYellow: rgb(255, 253, 239);
 $lightYellow: rgb(255, 250, 212);
 $darkYellow: rgb(255, 244, 163);
 $lightGreen: rgb(239, 249, 208);
@@ -147,7 +147,7 @@ button {
 
     padding: 10px 0px;
     background-color: $sepia;
-    font: 500 $biggerText 'Solway';
+    font: 500 $biggerText 'ZillaSlab';
     color: $xtraDarkSepia;
     border-radius: $rounded;
 }
@@ -165,7 +165,7 @@ body {
     margin: 0px;
     background-color: $lightestYellow;
     color: $xtraDarkSepia;
-    font-family: 'Solway';
+    font-family: 'ZillaSlab';
 }
 
 .router-link {
@@ -188,7 +188,6 @@ body {
     justify-content: center;
 
     font: $smallTitle 'Rancho';
-    letter-spacing: 0.05em;
     color: $xxtraDarkGreen;
 }
 
@@ -201,6 +200,7 @@ body {
     height: 100%;
     padding: 2% 6%;
 
+    font-size: $text;
     text-align: justify;
     line-height: 170%;
     color: $xtraDarkGreen;
@@ -385,6 +385,7 @@ body {
         width: 25vw;
     }
     .shop-banner {
+        letter-spacing: 0.05em;
         font-size: $title;
     }
     .shop-item {
@@ -422,6 +423,7 @@ body {
     .shop-banner {
         font-size: $biggestTitle;
     }
-    .placeholder-img {
+    .about-container {
+        font-size: $bigText;
     }
 }
