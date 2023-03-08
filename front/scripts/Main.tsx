@@ -156,6 +156,7 @@ const Footer = (props: any) => {
     )
 }
 
+//TODO: switch back to createBrowserRouter once this is no longer being hosted on github pages
 const Router = createHashRouter([
     {
         path: "/",
