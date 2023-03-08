@@ -1,0 +1,4 @@
+import stripe
+stripe.api_key = "sk_test_51MZNdXDkVZPCuxAgUEcj4WixI3PPzfrl8zHpbcIISboO4VqFyGEmVLlIimWwGvb7gmGHYWpBnwR7BpFNBay7HZ6o00hG20up49"
+
+stripe.Product.modify("prod_NUV1H20pUJcrme", active=False)
