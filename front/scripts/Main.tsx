@@ -64,13 +64,6 @@ const FilterBar = (props: any) => {
     return (
         <div className="filter-bar">
             <FilterItem />
-            <FilterItem />
-            <FilterItem />
-            <FilterItem />
-            <FilterItem />
-            <FilterItem />
-            <FilterItem />
-            <FilterItem />
         </div>
     )
 }
@@ -93,17 +86,6 @@ const FilterButton = (props: any) => {
 const ShopItemsContainer = (props: any) => {
     return (
         <div className="shop-items-container">
-            <ShopItem />
-            <ShopItem />
-            <ShopItem />
-            <ShopItem />
-            <ShopItem />
-            <ShopItem />
-            <ShopItem />
-            <ShopItem />
-            <ShopItem />
-            <ShopItem />
-            <ShopItem />
             <ShopItem />
         </div>
     )
