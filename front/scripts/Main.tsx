@@ -8,6 +8,7 @@ import {
     HashRouter,
     Link,
 } from "react-router-dom";
+import * as $ from 'jquery';
 import AboutPage from "./About";
 import ContactPage from "./Contact";
 
@@ -84,6 +85,13 @@ const FilterButton = (props: any) => {
 }
 
 const ShopItemsContainer = (props: any) => {
+    // TODO: make this not be 404
+    // i assume it's 404'ing bc i don't provide a key
+    // it may be more modular to do this request in stripe.py and then call that function
+    // https://stackoverflow.com/questions/13175510/call-python-function-from-javascript-code
+    $.get("https://api.stripe.com/v1/products/", (data, status) => {
+        console.log(data);
+    });
     return (
         <div className="shop-items-container">
             <ShopItem />

@@ -36,3 +36,9 @@ def create_checkout_session():
 if __name__ == '__main__':
     app.run(port=4242)
 '''
+
+def load_all_products():
+    pass
+
+def load_product(id: str):
+    pass
