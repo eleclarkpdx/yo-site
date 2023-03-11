@@ -3,3 +3,4 @@ node_modules
 front/styles/*.css
 front/styles/*.css.map
 dist
+back/__pycache__/stripe.cpython-311.pyc

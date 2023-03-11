@@ -1,18 +1,20 @@
 import stripe
 import os
+import requests
 from flask import Flask, redirect, request
-stripe.api_key = "sk_test_51MZNdXDkVZPCuxAgUEcj4WixI3PPzfrl8zHpbcIISboO4VqFyGEmVLlIimWwGvb7gmGHYWpBnwR7BpFNBay7HZ6o00hG20up49"
 
-stripe.Product.modify("prod_NUV1H20pUJcrme", active=False)
+key = "sk_test_51MZNdXDkVZPCuxAgUEcj4WixI3PPzfrl8zHpbcIISboO4VqFyGEmVLlIimWwGvb7gmGHYWpBnwR7BpFNBay7HZ6o00hG20up49"
+stripe.api_key = key
 
 # example code from https://stripe.com/docs/payments/checkout/how-checkout-works
-'''
 app = Flask(__name__,
             static_url_path='',
             static_folder='public')
 
-YOUR_DOMAIN = 'http://localhost:4242'
+port = int(os.getenv("PORT"))
+YOUR_DOMAIN = 'http://localhost:5173'
 
+'''
 @app.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
     try:
@@ -37,8 +39,12 @@ if __name__ == '__main__':
     app.run(port=4242)
 '''
 
+@app.route('/back', methods=['POST'])
 def load_all_products():
-    pass
+    r = requests.get("https://api.stripe.com/v1/products", auth=(key, ""), data={"active": "true"})
+    data = r.json().get("data")
+    print(data)
 
-def load_product(id: str):
-    pass
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=port)
+    load_all_products()

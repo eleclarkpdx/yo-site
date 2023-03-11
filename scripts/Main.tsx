@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import {useElementSize} from "usehooks-ts";
 import {
@@ -7,6 +7,7 @@ import {
     Route,
     HashRouter,
     Link,
+    json,
 } from "react-router-dom";
 import * as $ from 'jquery';
 import AboutPage from "./About";
@@ -84,14 +85,53 @@ const FilterButton = (props: any) => {
     )
 }
 
-const ShopItemsContainer = (props: any) => {
-    // TODO: make this not be 404
-    // i assume it's 404'ing bc i don't provide a key
-    // it may be more modular to do this request in stripe.py and then call that function
-    // https://stackoverflow.com/questions/13175510/call-python-function-from-javascript-code
-    $.get("https://api.stripe.com/v1/products/", (data, status) => {
-        console.log(data);
+const getProducts = async() => {
+    const url = "https://api.stripe.com/v1/products";
+    /*
+    $.ajax({
+        type: "GET",
+        headers: {
+            "Authorization": "Bearer " + sk_test
+        },
+        data: "active=true",
+        url: ,
+        dataType: "json",
+        success: function(response) {
+            console.log(response)
+            console.log(response.data[0])
+            for (let i = 0; i < response.data.length(); ++i) {
+                const product = response[i];
+                console.log(product);
+            }
+        }
     });
+    let json = await((await fetch(url, {method: "GET", headers: {"Authorization": "Bearer " + sk_test}})).json());
+    let products = json.data;
+    for (let product in products) {
+        console.log(product)
+    }
+    const {get} = require("child_processs")
+    const b = get("python", ["../stripeCode.py"])
+    console.log(b)
+    */
+
+    $.ajax({
+        type: "POST",
+        url: "../back/stripeCode.py",
+        }).done(function(data) {
+            console.log(data)
+        });
+}
+
+const ShopItemsContainer = (props: any) => {
+    const [jsonProducts, setJsonProducts] = useState<[]>([]);
+    const [shopItems, setShopItems] = useState([]);
+
+    useEffect(() => {
+        getProducts();
+    },
+    []); //the empty array causes this useEffect to only execute once
+
     return (
         <div className="shop-items-container">
             <ShopItem />
