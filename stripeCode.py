@@ -11,8 +11,8 @@ app = Flask(__name__,
             static_url_path='',
             static_folder='public')
 
-port = int(os.getenv("PORT"))
-YOUR_DOMAIN = 'http://localhost:5173'
+port: int = 5173
+YOUR_DOMAIN = 'http://localhost:' + str(port)
 
 '''
 @app.route('/create-checkout-session', methods=['POST'])

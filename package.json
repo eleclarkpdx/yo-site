@@ -3,10 +3,11 @@
   "version": "0.0.1",
   "description": "A website for Yo to sell her wares.",
   "homepage": "https://eleclarkpdx.github.io/yo-site/",
-  "main": "index.html",
+  "main": "tempServer.js",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
+    "dev": "nodemon",
     "start": "vite",
     "build": "vite build"
   },
@@ -16,7 +17,9 @@
     "@types/jquery": "^2.0.47",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
+    "express": "^4.18.2",
     "jquery": "^3.6.4",
+    "nodemon": "^2.0.21",
     "prettier": "^2.8.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

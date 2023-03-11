@@ -113,7 +113,6 @@ const getProducts = async() => {
     const {get} = require("child_processs")
     const b = get("python", ["../stripeCode.py"])
     console.log(b)
-    */
 
     $.ajax({
         type: "POST",
@@ -121,6 +120,7 @@ const getProducts = async() => {
         }).done(function(data) {
             console.log(data)
         });
+    */
 }
 
 const ShopItemsContainer = (props: any) => {
